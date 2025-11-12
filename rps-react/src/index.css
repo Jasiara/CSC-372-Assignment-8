@@ -1,47 +1,47 @@
 :root {
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #f4f6ff;
-  background-color: #0b1537;
-  --text-color: #f4f6ff;
-  --text-muted: #a8b2d1;
-  --accent-color: #5f8bff;
-  --accent-muted: #93a5ff;
-  --surface-color: rgba(13, 25, 58, 0.9);
-  --surface-elevated: rgba(255, 255, 255, 0.05);
-  --surface-border: rgba(255, 255, 255, 0.08);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; /* Set global font stack */
+  line-height: 1.5; /* Improve readability */
+  font-weight: 400; /* Default weight */
+  font-synthesis: none; /* Prevent faux bold/italic */
+  text-rendering: optimizeLegibility; /* Enhance text rendering */
+  -webkit-font-smoothing: antialiased; /* Smooth fonts in WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Smooth fonts in Firefox */
+  color: #f4f6ff; /* Base text color */
+  background-color: #0b1537; /* Base page background */
+  --text-color: #f4f6ff; /* Custom property for main text */
+  --text-muted: #a8b2d1; /* Custom property for muted text */
+  --accent-color: #5f8bff; /* Custom property for accents */
+  --accent-muted: #93a5ff; /* Softer accent variant */
+  --surface-color: rgba(13, 25, 58, 0.9); /* Card background color */
+  --surface-elevated: rgba(255, 255, 255, 0.05); /* Elevated surface tone */
+  --surface-border: rgba(255, 255, 255, 0.08); /* Border color for panels */
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding/border in width/height */
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
+  margin: 0; /* Remove default margin */
+  min-height: 100vh; /* Ensure body covers viewport */
   background: radial-gradient(circle at top, rgba(95, 139, 255, 0.25), transparent 60%),
     radial-gradient(circle at bottom, rgba(114, 195, 255, 0.2), transparent 55%),
-    #050812;
-  color: var(--text-color);
+    #050812; /* Layered gradients for subtle glow */
+  color: var(--text-color); /* Apply primary text color */
 }
 
 #root {
-  width: 100%;
+  width: 100%; /* Allow root to span full width */
 }
 
 button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
+  font-family: inherit; /* Keep typography consistent */
+  cursor: pointer; /* Show pointer cursor on buttons */
+  border: none; /* Reset default button border */
 }
 
 button:focus-visible,
 button:focus {
-  outline: 3px solid rgba(95, 139, 255, 0.6);
-  outline-offset: 3px;
+  outline: 3px solid rgba(95, 139, 255, 0.6); /* High-contrast focus ring */
+  outline-offset: 3px; /* Offset ring away from element edge */
 }

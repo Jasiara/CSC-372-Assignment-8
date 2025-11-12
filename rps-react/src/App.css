@@ -1,229 +1,229 @@
 .app-shell {
-  min-height: 100vh;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 4rem auto;
+  min-height: 100vh; /* Stretch layout to full viewport height */
+  padding: 2rem; /* Add breathing room around content */
+  max-width: 1200px; /* Constrain width for readability */
+  margin: 0 auto 4rem auto; /* Center the layout and add bottom spacing */
 }
 
 header {
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: center; /* Center header text */
+  margin-bottom: 2rem; /* Separate header from panels */
 }
 
 .eyebrow {
-  letter-spacing: 0.2em;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: var(--accent-muted);
+  letter-spacing: 0.2em; /* Create spaced-out label look */
+  font-size: 0.75rem; /* Keep text subtle */
+  text-transform: uppercase; /* Use caps for eyebrow style */
+  color: var(--accent-muted); /* Apply muted accent color */
 }
 
 .lead {
-  max-width: 720px;
-  margin: 0.5rem auto 0 auto;
-  color: var(--text-muted);
+  max-width: 720px; /* Limit paragraph width */
+  margin: 0.5rem auto 0 auto; /* Center copy under heading */
+  color: var(--text-muted); /* Use softer text color */
 }
 
 .panels-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
+  display: grid; /* Use grid for equal columns */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Responsive column sizing */
+  gap: 1.5rem; /* Space between panels */
 }
 
 .panel {
-  background: var(--surface-color);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 20px 60px rgba(11, 21, 55, 0.15);
-  border: 1px solid var(--surface-border);
+  background: var(--surface-color); /* Apply translucent card background */
+  border-radius: 1rem; /* Round panel corners */
+  padding: 1.5rem; /* Space interior content */
+  box-shadow: 0 20px 60px rgba(11, 21, 55, 0.15); /* Add depth */
+  border: 1px solid var(--surface-border); /* Outline panels subtly */
 }
 
 .panel h2 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+  margin-top: 0; /* Remove default top margin */
+  margin-bottom: 0.5rem; /* Tighten heading spacing */
+  font-size: 1.25rem; /* Consistent section heading size */
 }
 
 .panel-subtitle {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color: var(--text-muted);
+  margin-top: 0; /* Align with heading */
+  margin-bottom: 1rem; /* Space before controls */
+  color: var(--text-muted); /* Muted descriptive text */
 }
 
 .throw-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(60px, 1fr));
-  gap: 1rem;
+  display: grid; /* Lay out buttons evenly */
+  grid-template-columns: repeat(3, minmax(60px, 1fr)); /* Exactly three columns */
+  gap: 1rem; /* Space between buttons */
 }
 
 .throw-button {
-  background: var(--surface-elevated);
-  border: 2px solid transparent;
-  border-radius: 0.85rem;
-  padding: 0.75rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  transition: transform 150ms ease, border 150ms ease, box-shadow 150ms ease;
-  font-weight: 600;
-  color: var(--text-color);
+  background: var(--surface-elevated); /* Slightly raised background */
+  border: 2px solid transparent; /* Default invisible border */
+  border-radius: 0.85rem; /* Smooth button corners */
+  padding: 0.75rem; /* Internal spacing */
+  display: flex; /* Stack contents vertically */
+  flex-direction: column; /* Place icon above label */
+  align-items: center; /* Center align both axis */
+  gap: 0.5rem; /* Space between icon and label */
+  transition: transform 150ms ease, border 150ms ease, box-shadow 150ms ease; /* Animate hover feedback */
+  font-weight: 600; /* Bold labels */
+  color: var(--text-color); /* Ensure readable text */
 }
 
 .throw-button img {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
+  width: 72px; /* Fix icon width */
+  height: 72px; /* Fix icon height */
+  object-fit: contain; /* Keep full image visible */
 }
 
 .throw-button:hover:not(:disabled),
 .throw-button:focus-visible {
-  border-color: var(--accent-color);
-  transform: translateY(-2px);
+  border-color: var(--accent-color); /* Highlight selected state */
+  transform: translateY(-2px); /* Lift button slightly */
 }
 
 .throw-button.selected {
-  border-color: var(--accent-color);
-  box-shadow: 0 10px 20px rgba(63, 115, 255, 0.25);
+  border-color: var(--accent-color); /* Persistent highlight for chosen throw */
+  box-shadow: 0 10px 20px rgba(63, 115, 255, 0.25); /* Glow effect for selection */
 }
 
 .throw-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  opacity: 0.6; /* Dim when disabled */
+  cursor: not-allowed; /* Communicate disabled state */
 }
 
 .computer-display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
+  display: flex; /* Stack contents vertically */
+  flex-direction: column; /* Keep image above text */
+  align-items: center; /* Center both axes */
+  gap: 0.75rem; /* Space between image and caption */
 }
 
 .computer-display img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  border-radius: 50%;
-  padding: 0.5rem;
-  background: var(--surface-elevated);
-  border: 2px solid transparent;
+  width: 120px; /* Larger display icon */
+  height: 120px; /* Match width for circle */
+  object-fit: contain; /* Keep full icon visible */
+  border-radius: 50%; /* Circular frame */
+  padding: 0.5rem; /* Inner breathing room */
+  background: var(--surface-elevated); /* Distinct background behind icon */
+  border: 2px solid transparent; /* Placeholder border for animations */
 }
 
 .computer-display.shuffling img {
-  animation: pulse 500ms ease-in-out infinite;
-  border-color: var(--accent-color);
+  animation: pulse 500ms ease-in-out infinite; /* Pulse while computer shuffles */
+  border-color: var(--accent-color); /* Highlight border during animation */
 }
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    transform: scale(1); /* Start at normal size */
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Grow midway through */
   }
   100% {
-    transform: scale(1);
+    transform: scale(1); /* Return to original size */
   }
 }
 
 .result-text {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0.5rem 0;
-  text-transform: uppercase;
+  font-size: 2rem; /* Make result prominent */
+  font-weight: 700; /* Bold outcome */
+  margin: 0.5rem 0; /* Space around heading */
+  text-transform: uppercase; /* Stylize result label */
 }
 
 .result-text[data-result='win'] {
-  color: #5cd37e;
+  color: #5cd37e; /* Green for wins */
 }
 
 .result-text[data-result='lose'] {
-  color: #ff6b6b;
+  color: #ff6b6b; /* Red for losses */
 }
 
 .result-text[data-result='tie'] {
-  color: #ffd166;
+  color: #ffd166; /* Yellow for ties */
 }
 
 .result-text[data-result='pending'] {
-  color: var(--text-muted);
+  color: var(--text-muted); /* Soft tone before result shows */
 }
 
 .status-text {
-  color: var(--text-muted);
-  margin: 0;
+  color: var(--text-muted); /* Keep description subdued */
+  margin: 0; /* Remove default spacing */
 }
 
 .footer-grid {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: minmax(240px, 1fr) auto;
-  gap: 1rem;
-  align-items: center;
+  margin-top: 2rem; /* Separate footer from panels */
+  display: grid; /* Align scoreboard and button */
+  grid-template-columns: minmax(240px, 1fr) auto; /* Give scoreboard more room */
+  gap: 1rem; /* Space between items */
+  align-items: center; /* Vertically align content */
 }
 
 .score-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 0;
+  display: grid; /* Arrange stat cards */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* Three equal columns */
+  gap: 1rem; /* Space between stats */
+  margin: 0; /* Remove default margin */
 }
 
 .score-grid div {
-  background: var(--surface-elevated);
-  border-radius: 0.75rem;
-  padding: 0.75rem;
-  text-align: center;
+  background: var(--surface-elevated); /* Card styling for stats */
+  border-radius: 0.75rem; /* Rounded stat cards */
+  padding: 0.75rem; /* Add breathing room */
+  text-align: center; /* Center numbers and labels */
 }
 
 .score-grid dt {
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  color: var(--text-muted);
+  font-size: 0.9rem; /* Compact label text */
+  text-transform: uppercase; /* Stylize stat labels */
+  color: var(--text-muted); /* Use muted tone */
 }
 
 .score-grid dd {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
+  font-size: 2rem; /* Large numbers for emphasis */
+  font-weight: 700; /* Bold numbers */
+  margin: 0; /* Remove default spacing */
 }
 
 .reset-button {
-  padding: 0.85rem 1.75rem;
-  border-radius: 999px;
-  border: none;
-  font-weight: 600;
-  background: linear-gradient(120deg, #3f73ff, #72c3ff);
-  color: #fff;
-  box-shadow: 0 12px 30px rgba(63, 115, 255, 0.35);
+  padding: 0.85rem 1.75rem; /* Comfortable hit target */
+  border-radius: 999px; /* Pill shape */
+  border: none; /* Remove default border */
+  font-weight: 600; /* Bold label */
+  background: linear-gradient(120deg, #3f73ff, #72c3ff); /* Gradient fill */
+  color: #fff; /* White text for contrast */
+  box-shadow: 0 12px 30px rgba(63, 115, 255, 0.35); /* Elevated effect */
 }
 
 .reset-button:disabled {
-  opacity: 0.5;
-  box-shadow: none;
+  opacity: 0.5; /* Fade button when disabled */
+  box-shadow: none; /* Remove glow to signal inactivity */
 }
 
 .rules-panel {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: 1px dashed var(--surface-border);
-  background: rgba(255, 255, 255, 0.04);
+  margin-top: 2rem; /* Space above rule list */
+  padding: 1.5rem; /* Cushion the content */
+  border-radius: 1rem; /* Match panel styling */
+  border: 1px dashed var(--surface-border); /* Dashed border for emphasis */
+  background: rgba(255, 255, 255, 0.04); /* Light translucent fill */
 }
 
 .rules-panel ul {
-  padding-left: 1.25rem;
+  padding-left: 1.25rem; /* Indent bullet list */
 }
 
 .rules-panel li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Space between rule items */
 }
 
 @media (max-width: 700px) {
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack footer content on mobile */
   }
 
   .throw-grid {
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Allow throw buttons to wrap */
   }
 }
