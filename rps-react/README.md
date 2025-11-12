@@ -1,16 +1,40 @@
-# React + Vite
+# Rock · Paper · Scissors (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive remake of the classic playground game built for CSC 372 Assignment 8. The app uses modular React components, hooks, and accessible UI patterns to let a player battle the computer with animated throws and persistent scoring.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Install dependencies**
+	```bash
+	npm install
+	```
+2. **Start the dev server**
+	```bash
+	npm run dev
+	```
+3. Open the printed local URL in your browser (default: `http://localhost:5173`).
 
-## React Compiler
+## Gameplay Flow
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Click any throw (rock, paper, or scissors) in the Player panel. Keyboard users can focus the buttons and press `Enter`/`Space`.
+- The Computer panel shows a question mark, then shuffles through all throws every 500 ms for 3 seconds before locking in a random choice.
+- The Result panel announces whether you won, lost, or tied, and describes both throws using semantic, accessible text.
+- The Scoreboard tracks cumulative wins, losses, and ties until you press **Reset Game**, which clears both the score and the current round.
 
-## Expanding the ESLint configuration
+## Component Breakdown
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `App`: Owns game state, orchestrates animation timing, and shares props with child components.
+- `PlayerThrow`: Shows clickable throw options, highlights the current selection, and emits user actions.
+- `ComputerThrow`: Displays the computer's animated shuffle and final selection.
+- `ResultDisplay`: Announces round outcomes while meeting semantic and accessibility requirements.
+- `ScoreBoard`: Aggregates wins/losses/ties for extra-credit tracking.
+- `ResetButton`: Exposes a single, keyboard-friendly action to reset rounds and scoreboard data.
+
+## Implementation Reflection
+
+- **State Management:** I leaned on `useState` for discrete bits of state (player choice, computer choice, result, score, animation flag). The animation timing stays predictable by kicking off one `setInterval` and one `setTimeout` per round and cleaning them up inside `useEffect`.
+- **Gameplay Guarantees:** All nine throw combinations are covered by a simple lookup map (`WIN_RULES`). This makes the win/lose logic easy to verify and extend.
+- **Accessibility & Styling:** Every image includes an `alt` description, buttons advertise `aria-pressed`, and focus-visible styles ensure keyboard users can play comfortably. Styling lives in external CSS (`App.css` / `index.css`) per assignment requirements, with responsive grids for smaller screens.
+- **Extras:** The scoreboard and reset button complete the optional extra-credit features while keeping the UI uncluttered.
+
+Let me know if you'd like additional enhancements—such as persistent scores, match history, or sound effects!
